@@ -10,13 +10,18 @@ public class LosPollitos {
     
     public static void main(String[] args) {
         JOptionPane.showMessageDialog(null, "Bienvenido al Sistema de bodegas de  Los Pollitos INC");
-        
+        Producto nProducto = new Producto("Agua",1000.0,23,4,"Cristal","Bebida");
         //Variables de numero de opcion
         int ropcion = 0, numopcion = 0, imopcion= 0, epopcion = 0 , inopcion;
         //Variable del contador del While del menu principal
         int m = 0;
         //Variables Entrada para tranformar en int-Variables de numero de opcion
         String entradaep = "" , entrada = "",entradar = "",entradaim = "",entradain = "";
+        //variables Registro Productos
+        String rname = "", rmarca = "",rcategoria ="", Rentradacantidad = "",Rentradacodigo = "", Rentradaprecio = "";
+        int rcantidad = 0 , rcodigo = 0;
+        double rprecio = 0.0;
+        
         
         while (m<2){
             
@@ -37,6 +42,21 @@ public class LosPollitos {
                      ropcion = Integer.parseInt(entradar);
                     if (ropcion == 1){
                         JOptionPane.showMessageDialog(null, "Bienvenido al Registro ");
+                        rname = JOptionPane.showInputDialog(null,"Ingrese el nombre del producto");
+                        Rentradaprecio = JOptionPane.showInputDialog(null, "Ingrese el precio");
+                        Rentradacodigo = JOptionPane.showInputDialog(null, "Ingrese Codigo");
+                        Rentradacantidad = JOptionPane.showInputDialog(null, "Ingrese la cantidad  de activos ");
+                        rmarca = JOptionPane.showInputDialog(null, "Ingrese la Marca del producto");
+                        rcategoria = JOptionPane.showInputDialog(null, "Ingrese la categoria del producto");
+                        rprecio = Double.parseDouble(Rentradaprecio);
+                        rcodigo = Integer.parseInt(Rentradacodigo);
+                        rcantidad = Integer.parseInt(Rentradacantidad);
+                        nProducto.setname(rname);
+                        nProducto.setprecio(rprecio);
+                        nProducto.setcodigo(rcodigo);
+                        nProducto.setmarca(rmarca);
+                        nProducto.setcategoria(rcategoria);
+                        JOptionPane.showMessageDialog(null, "Producto Guardado como: "+"\n" + nProducto.getinfoproducto());
                     }
                     if (ropcion == 2){
                         r = 5;
