@@ -8,6 +8,8 @@ public class IngresarMercaderia {
     
     public static void MenuIngresarMercaderia(){
         
+        
+        
     //hay que agregar las clases para que habran los programas designados
     String entradaim;
     int im = 0, imopcion = 0;
